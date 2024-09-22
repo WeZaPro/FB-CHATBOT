@@ -21,12 +21,16 @@ require("dotenv").config();
 //   res.sendStatus(200);
 // });
 app.get("/webhook", (req, res) => {
-  console.log("req ", req);
+  console.log("req.body ", req.body);
   const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
   const mode = req.query["hub.mode"];
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
+
+  console.log("mode", mode);
+  console.log("token ", token);
+  console.log("challenge ", challenge);
 
   // const messagingEvents = req.body.entry[0].messaging;
   // console.log("messagingEvents ", messagingEvents);
