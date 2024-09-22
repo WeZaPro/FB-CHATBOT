@@ -28,8 +28,8 @@ app.get("/webhook", (req, res) => {
   const token = req.query["hub.verify_token"];
   const challenge = req.query["hub.challenge"];
 
-  const messagingEvents = req.body.entry[0].messaging;
-  console.log("messagingEvents ", messagingEvents);
+  // const messagingEvents = req.body.entry[0].messaging;
+  // console.log("messagingEvents ", messagingEvents);
 
   if (mode && token) {
     if (mode === "subscribe" && token === VERIFY_TOKEN) {
